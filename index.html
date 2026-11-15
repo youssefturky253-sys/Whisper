@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ghost Rovers</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="model3d.css">
+  <link rel="stylesheet" href="buddy.css">
+</head>
+<body>
+  <div id="globe"></div>
+  <div id="space" hidden></div>
+
+  <header>
+    <h1>Ghost Rovers</h1>
+    <div class="tabs">
+      <button id="moonBtn">Moon</button>
+      <button id="marsBtn">Mars</button>
+      <button id="spaceBtn">Deep Space</button>
+    </div>
+  </header>
+
+  <aside id="card"><p>Drag to spin the world, then click an icon to meet a machine!</p></aside>
+  <footer>Maps, photos and mission data: NASA / USGS / LRO / Viking</footer>
+
+  <!-- globe.gl.min.js لازم يكون جنب الملفات. لو مش موجود، بيرجع للإنترنت -->
+  <script src="globe.gl.min.js"></script>
+  <script>
+    if (!window.Globe) {
+      document.write('<script src="https:\/\/unpkg.com\/globe.gl"><\/script>');
+    }
+  </script>
+  <!-- three.min.js اختياري جنب الملفات. لو مش موجود، بيرجع للإنترنت -->
+  <script src="three.min.js"></script>
+  <script>
+    if (!window.THREE) {
+      document.write('<script src="https:\/\/cdnjs.cloudflare.com\/ajax\/libs\/three.js\/r128\/three.min.js"><\/script>');
+    }
+  </script>
+  <script src="maps.js"></script>
+  <script src="data.js"></script>
+  <script src="extra.js"></script>
+  <script src="app.js"></script>
+  <script src="model3d.js"></script>
+  <script src="buddy.js"></script>
+</body>
+</html>

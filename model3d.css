@@ -1,0 +1,39 @@
+/* ===== عارض الـ 3D ===== */
+#m3d { position: fixed; inset: 0; z-index: 60; display: flex; background: #05070f; }
+.m3dStage { position: relative; flex: 1; min-width: 0; }
+#m3dCanvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; touch-action: none; cursor: grab; }
+.m3dTop { position: absolute; top: 14px; left: 18px; right: 18px; display: flex; justify-content: space-between;
+  align-items: flex-start; gap: 12px; pointer-events: none; }
+.m3dTop > * { pointer-events: auto; }
+.m3dTop small { font-size: 12px; color: #ff9a6b; text-transform: uppercase; letter-spacing: 1px; }
+#m3dName { margin: 2px 0 0; font-size: 26px; }
+#m3dClose { background: rgba(255,255,255,.12); white-space: nowrap; }
+#m3dClose:hover { background: rgba(255,255,255,.22); }
+.m3dHint { position: absolute; left: 0; right: 0; bottom: 14px; margin: 0; text-align: center; font-size: 13px; opacity: .65;
+  pointer-events: none; }
+
+.m3dSide { width: 340px; flex: none; display: flex; flex-direction: column; gap: 8px; padding: 70px 22px 22px;
+  background: #151b3b; overflow-y: auto; }
+.m3dNote { font-size: 11px; opacity: .55; }
+#m3dPartName { margin: 4px 0 0; font-size: 21px; color: #ff9a6b; }
+#m3dPartText { margin: 0 0 8px; font-size: 15px; line-height: 1.6; }
+#m3dParts { display: flex; flex-wrap: wrap; gap: 6px; margin-top: auto; padding-top: 10px;
+  border-top: 1px solid rgba(255,255,255,.08); }
+.m3dChip { padding: 6px 12px; font-size: 12px; background: transparent; border: 1px solid #ff7a45; color: #ff9a6b; }
+.m3dChip:hover { background: rgba(255,122,69,.15); }
+.m3dChip.on { background: #ff7a45; color: #0b1026; }
+
+/* ===== زرار Listen / Stop ===== */
+.m3dSay { display: inline-flex; align-items: center; gap: 6px; align-self: flex-start;
+  padding: 7px 16px; font-size: 13px; background: rgba(255,255,255,.1); }
+.m3dSay:hover { background: rgba(255,255,255,.2); }
+.m3dSay.on { background: #ff7a45; color: #0b1026; }
+.m3dSay svg { width: 16px; height: 16px; }
+.m3dSay.on svg { stroke: #0b1026; }
+
+@media (max-width: 800px) {
+  #m3d { flex-direction: column; }
+  .m3dSide { width: auto; max-height: 46%; padding: 14px 16px 16px; }
+  #m3dName { font-size: 21px; }
+  #m3dParts { margin-top: 6px; }
+}
